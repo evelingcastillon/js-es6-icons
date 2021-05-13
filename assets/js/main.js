@@ -132,21 +132,31 @@ icons.forEach((item) => {
 });
 /* animal slide */
 
+document.getElementById("scelta").addEventListener("change", function() {
+    let selezionato = document.getElementById('scelta').value;
+    console.log(selezionato);
 
-const iconsAnimal = icons.filter((item) => {
-    return item.type === 'animal';
-});
-console.log(iconsAnimal);
+    const iconsAnimal = icons.filter((item) => {
+        return item.type === selezionato;
+    });
+    if(iconsAnimal.length > 0) {
+        var array = iconsAnimal;
+    } else{
+        var array = icons;
+    }
 
-const iconsVegetable = icons.filter((item) => {
-    return item.type === 'vegetable';
-});
-console.log(iconsVegetable);
+    document.getElementById('container').innerHTML = '';
 
-const iconsUser = icons.filter((item) => {
-    return item.type === 'user';
+    array.forEach((item) => {
+        document.getElementById('container').insertAdjacentHTML('beforeend', `
+            <div class="elementi">
+                <i class="${item.family} ${item.prefix}${item.name}" style='color: ${item.coloreItem}'></i>
+                <p class="text">${item.name.toLocaleUpperCase()}</p>
+            </div>
+        `);
+    });
+
 });
-console.log(iconsUser);
 
 /* const iconsAnimal = [];
 const icons
