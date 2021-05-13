@@ -121,9 +121,8 @@ icons.forEach((item) => {
     }
 });
 
-
+/* AGGIUNTA DI OGNI ICON IN DIV CONTAINER */
 icons.forEach((item) => {
-    console.log(item.family);
     document.getElementById('container').insertAdjacentHTML('beforeend', `
         <div class="elementi">
             <i class="${item.family} ${item.prefix}${item.name}" style='color: ${item.coloreItem}'></i>
@@ -131,3 +130,41 @@ icons.forEach((item) => {
         </div>
     `)
 });
+/* animal slide */
+
+
+const iconsAnimal = icons.filter((item) => {
+    return item.type === 'animal';
+});
+console.log(iconsAnimal);
+
+const iconsVegetable = icons.filter((item) => {
+    return item.type === 'vegetable';
+});
+console.log(iconsVegetable);
+
+const iconsUser = icons.filter((item) => {
+    return item.type === 'user';
+});
+console.log(iconsUser);
+
+/* const iconsAnimal = [];
+const icons
+icons.forEach((item) => {
+    if(item.type === 'animal') {
+        iconsAnimal.push(item)
+    }
+}) */
+
+/* document.getElementById("animal").addEventListener("click", function() {
+    let iconsAnimal = icons.forEach((item) => {
+        document.getElementById('container').insertAdjacentHTML('beforeend', `
+        <div class="elementi">
+            <i class="${item.family} ${item.prefix}${item.name}" style='color: ${item.coloreItem}'></i>
+            <p class="text">${item.name.toLocaleUpperCase()}</p>
+        </div>
+    `); 
+    })
+    console.log(iconsAnimal);
+
+  }); */
