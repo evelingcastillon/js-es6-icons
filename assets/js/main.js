@@ -107,12 +107,26 @@ const icons = [
 		family: 'fas'
 	}
 ];
+/* CICLO AGGIUNTA COLORI */
+icons.forEach((item) => {
+
+    if(item.type === 'animal') {
+        item.coloreItem = 'blue';
+
+    } else if (item.type === 'vegetable'){
+        item.coloreItem = 'gold';
+
+    } else {
+        item.coloreItem = 'purple';
+    }
+});
+
 
 icons.forEach((item) => {
     console.log(item.family);
     document.getElementById('container').insertAdjacentHTML('beforeend', `
         <div class="elementi">
-            <i class="${item.family} ${item.prefix}${item.name}"></i>
+            <i class="${item.family} ${item.prefix}${item.name}" style='color: ${item.coloreItem}'></i>
             <p class="text">${item.name.toLocaleUpperCase()}</p>
         </div>
     `)
