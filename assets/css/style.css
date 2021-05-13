@@ -7,6 +7,26 @@
 body {
     background-color: rgba(221, 221, 221, 1);
 }
+/* HEADER */
+#logo {
+    height: 50px;
+    background-color: white;
+    color: rgba(41, 177, 221, 1);
+    display: flex;
+    align-items: center;
+}
+.menu {
+    height: 80px;
+    background-color: rgba(41, 177, 221, 1);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu > .text-title {
+    font-size: 20px;
+}
+/* MAIN */
 #container {
     display: flex;
     justify-content: space-between;
